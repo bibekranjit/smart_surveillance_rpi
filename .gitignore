@@ -1,0 +1,9 @@
+audio.wav
+frame.jpg
+last_frame.jpg
+.venv
+__pycache__/
+*.pyc
+.env
+venv/
+*.pkl
