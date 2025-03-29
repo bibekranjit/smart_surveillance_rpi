@@ -1,42 +1,10 @@
-# from pathlib import Path
-# import cv2
-# import math
-# from ultralytics import YOLO
-# from config import EVENT_MESSAGES
-
-# model_path = "models/yolov8n.pt"
-# # model_path = "models/yolov8-face-mask.pt"
-# classNames = ["no_mask", "mask", "mask_weared_incorrect"] 
-# if not Path(model_path).exists():
-#     print("⚠️ Model not found, downloading...")
-#     model = YOLO("yolov8n.pt")  # This will auto-download to cache
-# else:
-#     print("🔥 Model found, loading...")
-#     model = YOLO(model_path)
-
-# def detect_objects_from_frame(frame):
-#     events = []
-#     results = model(frame, stream=True)
-#     for r in results:
-#         boxes = r.boxes
-#         for box in boxes:
-#             x1, y1, x2, y2 = map(int, box.xyxy[0])
-#             conf = math.ceil((box.conf[0]*100))/100
-#             cls = int(box.cls[0])
-#             print(f"🧠 Detected: {cls}")
-#             label = classNames[cls] if cls < len(classNames) else "Unknown"
-
-#             print(f"🧠 Detected: {label} | Confidence: {conf}")
-#             events.append(label)
-#     return events
-
-
 import cv2
 import math
 from ultralytics import YOLO
 from config import EVENT_MESSAGES
 
-model = YOLO("models/best.pt")  # Replace with your actual model path
+print("🔥 Model found, loading...")
+model = YOLO("models/best.pt") 
 classNames = ['Incorrect_Mask', 'With_Mask', 'Without_Mask']
 
 box_colors = {
