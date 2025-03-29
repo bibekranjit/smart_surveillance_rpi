@@ -8,6 +8,12 @@
       const msg = JSON.parse(event.data);
       console.log("📢 ALERT:", msg);
     };
+    setInterval(() => {
+      const img = document.querySelector('img');
+      const url = new URL(img.src);
+      url.searchParams.set('_ts', Date.now());
+      img.src = url.href;
+    }, 5000);
   </script>
 </head>
 <body>

@@ -16,5 +16,8 @@ EVENT_MESSAGES = {
     "high_crowd": "High crowd density detected. Maintain social distancing.",
     "suspicious_object": "Unattended object detected. Please inspect.",
     "animal_intrusion": "Animal intrusion detected! Stay alert.",
-    "motion_detected": "Unauthorized movement detected! Security alert triggered."
+    "motion_detected": "Unauthorized movement detected! Security alert triggered.",
+    "Incorrect_Mask": "Incorrect mask usage detected. Please adjust your mask.",
+    "With_Mask": "Mask detected. Area safe.",
+    "Without_Mask": "Face mask not detected! Please wear a mask."
 }

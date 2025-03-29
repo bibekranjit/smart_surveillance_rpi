@@ -3,14 +3,23 @@ import requests
 import numpy as np
 from config import IP_WEBCAM_URL
 
-def get_video_frame():
-    cap = cv2.VideoCapture(f"{IP_WEBCAM_URL}/video")
-    print(f"Connecting to {IP_WEBCAM_URL}/video")
-    ret, frame = cap.read()
-    if ret:
-        cv2.imwrite("last_frame.jpg", frame)
-    cap.release()
-    return frame if ret else None
+# def get_video_frame():
+#     try:
+#         cap = cv2.VideoCapture(f"{IP_WEBCAM_URL}/video")
+#         if not cap.isOpened():
+#             print("⚠️ Unable to open webcam stream.")
+#             return None
+#         ret, frame = cap.read()
+#         cap.release()
+#         if ret:
+#             print("📸 Frame captured successfully.")
+#             return frame
+#         else:
+#             print("⚠️ Failed to read frame from stream.")
+#             return None
+#     except Exception as e:
+#         print("❌ Exception in get_video_frame:", e)
+#         return None
 
 def get_audio_wav(filename="audio.wav"):
     try:
@@ -21,4 +30,25 @@ def get_audio_wav(filename="audio.wav"):
                 f.write(chunk)
         return filename
     except:
+        return None
+    
+
+def get_video_frame():
+    try:
+        cap = cv2.VideoCapture(f"{IP_WEBCAM_URL}/video")
+        if not cap.isOpened():
+            print("⚠️ Unable to open webcam stream.")
+            return None
+
+        ret, frame = cap.read()
+        cap.release()
+
+        if ret:
+            print("📸 Frame captured successfully.")
+            return frame
+        else:
+            print("⚠️ Failed to read frame from stream.")
+            return None
+    except Exception as e:
+        print("❌ Exception in get_video_frame:", e)
         return None
