@@ -18,7 +18,21 @@ A real-time smart surveillance system that uses an **Android IP Webcam** feed to
 
 ## 🖥 Folder Structure
 
-ipwebcam_event_detector/ ├── app.py # Flask server & detection loop ├── config.py # Configuration (IP, port, messages) ├── detection/ │ ├── ipwebcam.py # Capture frame from IP webcam │ ├── object_detector.py # YOLOv8 detection logic ├── utils/ │ ├── announcer.py # Optional audio alert via espeak │ └── logger.py # Log visual/audio events ├── models/ │ └── best.pt # Trained YOLOv8 face mask model ├── templates/ │ └── dashboard.html # Flask UI template └── static/ └── stream.mjpg # Stream endpoint (served live)
+ipwebcam_event_detector/
+├── app.py                 # Flask server with continuous detection loop and video stream
+├── config.py              # IP webcam configuration and event messages
+├── detection/
+│   ├── __init__.py
+│   ├── ipwebcam.py        # Capture frame from IP webcam
+│   ├── audio_classifier.py # Optional YAMNet-based audio classification
+│   └── object_detector.py # YOLOv8 face mask detection logic
+├── models/
+│   └── best.pt            # Trained YOLOv8 model (e.g. face mask detection)
+├── utils/
+│   ├── announcer.py       # Optional audio alerts (e.g. via espeak)
+│   └── logger.py          # Event logger for visual/audio alerts
+├── templates/
+    └── dashboard.html     # Flask HTML UI template
 
 
 
