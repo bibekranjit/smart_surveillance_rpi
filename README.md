@@ -17,7 +17,7 @@ A real-time smart surveillance system that uses an **Android IP Webcam** feed to
 ---
 
 ## 🖥 Folder Structure
-
+```
 ipwebcam_event_detector/
 ├── app.py                 # Flask server with continuous detection loop and video stream
 ├── config.py              # IP webcam configuration and event messages
@@ -33,7 +33,7 @@ ipwebcam_event_detector/
 │   └── logger.py          # Event logger for visual/audio alerts
 ├── templates/
     └── dashboard.html     # Flask HTML UI template
-
+```
 
 
 ---
